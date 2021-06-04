@@ -15,6 +15,7 @@ import com.gkemon.XMLtoPDF.PdfGeneratorListener;
 import com.gkemon.XMLtoPDF.model.FailureResponse;
 import com.gkemon.XMLtoPDF.model.SuccessResponse;
 import com.isroot.pdfsample.databinding.ActivityMainBinding;
+import com.isroot.pdfsample.databinding.PdfFirstPageBinding;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View pdfFirstPage = inflater.inflate(R.layout.pdf_first_page, null);
+//        PdfFirstPageBinding firstPageBinding = DataBindingUtil.setContentView(this, R.layout.pdf_first_page);
+//        firstPageBinding.textView.setText("이건 텍스트뷰");
         binding.makePdf.setOnClickListener(view -> {
             PdfGenerator.getBuilder()
                     .setContext(getApplicationContext())
